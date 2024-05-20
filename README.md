@@ -3,7 +3,7 @@
 
 <div align="center">
     <a href="https://ko-dev-eta.vercel.app">
-     <img src="https://github.com/roberthgnz/ko-dev/assets/63687573/e2d436b2-078f-4f1c-804f-5c56b7dde682">
+     <img src="https://github.com/roberthgnz/ko-dev/assets/63687573/9588f81f-aafe-412a-a87d-f265fa6c695b">
     </a>
 </div>
 
