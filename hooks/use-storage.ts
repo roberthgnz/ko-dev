@@ -6,7 +6,7 @@ import { Upload } from "tus-js-client"
 
 import { getFileType } from "@/utils/file"
 
-const projectId = "ltcsrdjcurhnshjwqosr"
+const projectId = process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID!
 
 export const useStorage = () => {
   const supabase = createClientComponentClient()
