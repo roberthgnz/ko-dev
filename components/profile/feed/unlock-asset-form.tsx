@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 // @ts-ignore
 import { loadScript } from "@paypal/paypal-js"
 
-import { useToast } from "@/components/ui/use-toast"
+import { toast } from "@/components/ui/toast"
 
 export const UnlockAssetForm = ({
   username,
@@ -15,7 +15,6 @@ export const UnlockAssetForm = ({
   post_id: string
 }) => {
   const router = useRouter()
-  const { toast } = useToast()
 
   useEffect(() => {
     const init = async () => {

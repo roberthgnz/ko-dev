@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
+import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -10,12 +11,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
 import { Icons } from "@/components/icons"
 
 export const PostEditionForm = ({ ...defaultState }: any) => {
-  const { toast } = useToast()
-
   const supabase = createClientComponentClient()
 
   const [loading, setLoading] = useState(false)
@@ -58,9 +56,7 @@ export const PostEditionForm = ({ ...defaultState }: any) => {
             disabled={loading}
           />
           <div className="space-y-2">
-            <Label htmlFor="price">
-              Set price (US dollar)
-            </Label>
+            <Label htmlFor="price">Set price (US dollar)</Label>
             <Input
               id="price"
               type="number"
@@ -79,8 +75,9 @@ export const PostEditionForm = ({ ...defaultState }: any) => {
               </p>
             ) : (
               <p className="rounded-md border border-destructive p-4 text-[0.8rem]">
-                Payments go directly to you, so you will need to connect a payment method to receive them.
-                a payment method to receive them. Go to{" "}
+                Payments go directly to you, so you will need to connect a
+                payment method to receive them. a payment method to receive
+                them. Go to{" "}
                 <Link
                   href={"/manage/settings?tab=payment"}
                   className="text-primary"
@@ -101,7 +98,8 @@ export const PostEditionForm = ({ ...defaultState }: any) => {
               <Label htmlFor="airplane-mode">Public display</Label>
             </div>
             <p className="text-[0.8rem] text-muted-foreground">
-              If you activate this option, your post will be visible to all visitors to your profile.
+              If you activate this option, your post will be visible to all
+              visitors to your profile.
             </p>
           </div>
           <div className="mt-8 flex justify-end">

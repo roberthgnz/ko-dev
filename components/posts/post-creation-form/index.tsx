@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
 import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
+import { toast } from "@/components/ui/toast"
 import { Icons } from "@/components/icons"
 
 import { FilePreview } from "./file-preview"
@@ -30,8 +30,6 @@ export const PostCreationForm = ({
   const router = useRouter()
 
   const storage = useStorage()
-
-  const { toast } = useToast()
 
   const inputFileRef = useRef<HTMLInputElement>(null)
 
@@ -142,9 +140,7 @@ export const PostCreationForm = ({
               </div>
             )}
             <div className="space-y-2">
-              <Label htmlFor="price">
-                Set price (US dollar)
-              </Label>
+              <Label htmlFor="price">Set price (US dollar)</Label>
               <Input
                 id="price"
                 type="number"
@@ -157,14 +153,14 @@ export const PostCreationForm = ({
               />
               {payment ? (
                 <p className="text-[0.8rem] text-muted-foreground">
-                  You can set a price for your publication. If you do not
-                  set a price, your post will be visible to your followers.
-                  followers.
+                  You can set a price for your publication. If you do not set a
+                  price, your post will be visible to your followers. followers.
                 </p>
               ) : (
                 <p className="rounded-md border border-destructive p-4 text-[0.8rem]">
-                  Payments go directly to you, so you will need to connect a payment method to receive them.
-                  a payment method to receive them. Go to{" "}
+                  Payments go directly to you, so you will need to connect a
+                  payment method to receive them. a payment method to receive
+                  them. Go to{" "}
                   <Link
                     href={"/manage/settings?tab=payment"}
                     className="text-primary"
@@ -185,7 +181,8 @@ export const PostCreationForm = ({
                 <Label htmlFor="airplane-mode">Public display</Label>
               </div>
               <p className="text-[0.8rem] text-muted-foreground">
-                If you activate this option, your post will be visible to all visitors to your profile.
+                If you activate this option, your post will be visible to all
+                visitors to your profile.
               </p>
             </div>
             {storage.uploading && (
