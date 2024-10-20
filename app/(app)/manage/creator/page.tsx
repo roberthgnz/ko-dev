@@ -17,7 +17,7 @@ export default async function CreatorPage() {
   return (
     <div className="space-y-6">
       <VerifyForm
-        userId={user?.id}
+        userId={user?.id as string}
         isCreator={profile.creator}
         isComplete={profile?.creators?.complete}
       />
